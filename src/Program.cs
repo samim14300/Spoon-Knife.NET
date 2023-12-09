@@ -13,7 +13,6 @@ app.MapGet("/", () =>
 {
     return File.ReadAllText("wwwroot/index.html"); 
 });
-*/
 
 app.MapFallback(context =>
 {
@@ -21,6 +20,6 @@ app.MapFallback(context =>
     var content = File.ReadAllText(filePath);
     return context.Response.WriteAsync(content);
 });
-
+*/
 
 app.Run();
