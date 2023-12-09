@@ -14,7 +14,7 @@ app.UseStaticFiles();
 
 app.MapGet("/", () =>
 {
-    return File.ReadAllText("wwwroot/index.html"); 
+    return File.ReadAllText("index.html"); 
 });
 
 app.Run();
