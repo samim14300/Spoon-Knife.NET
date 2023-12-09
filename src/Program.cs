@@ -17,7 +17,10 @@ app.MapGet("/", () =>
 
 app.MapFallback(context =>
 {
-    return context.Response.SendFileAsync(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"));
+    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html");
+    var content = File.ReadAllText(filePath);
+    return context.Response.WriteAsync(content);
 });
+
 
 app.Run();
