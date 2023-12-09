@@ -10,7 +10,6 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
-        // Add any additional services if needed
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
