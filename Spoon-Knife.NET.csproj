@@ -4,4 +4,9 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="src\Program.cs" />
+    <Compile Include="src\Startup.cs" />
+  </ItemGroup>
+
 </Project>
