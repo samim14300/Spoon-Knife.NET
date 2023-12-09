@@ -1,0 +1,1 @@
+// No additional configuration needed for serving a simple HTML file
