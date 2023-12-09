@@ -8,9 +8,16 @@ var app = builder.Build();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
+/*
 app.MapGet("/", () =>
 {
     return File.ReadAllText("wwwroot/index.html"); 
+});
+*/
+
+app.MapFallback(context =>
+{
+    return context.Response.SendFileAsync(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "index.html"));
 });
 
 app.Run();
