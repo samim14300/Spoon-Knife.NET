@@ -1,17 +1,16 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseRouting();
-app.UseAuthorization();
+app.UseDefaultFiles();
 
-app.MapGet("/", async context =>
+app.MapGet("/", () =>
 {
-    await context.Response.WriteAsync("Hello World!");
+    return File.ReadAllText("wwwroot/index.html"); 
 });
 
 app.Run();
